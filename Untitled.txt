@@ -1,0 +1,694 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "for_format_list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "진상 승훈 형주\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{} {} {}'\n",
+    "pr = s.format('진상','승훈','형주')\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "진상이는 승훈이와 형주을 좋아해\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{}이는 {}이와 {}을 좋아해'\n",
+    "pr = s.format('진상','승훈','형주')\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "진상이는 30201번이고 인하대학에 갔어\n"
+     ]
+    }
+   ],
+   "source": [
+    "s = '{}이는 {}번이고 {}대학에 갔어'\n",
+    "pr = s.format('진상',30201,'인하')\n",
+    "print(pr)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### [문제]햄버거 1개는 4달라"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "메뉴입력>>햄버거\n",
+      "개수입력>>4\n",
+      "햄버거 4개는 16달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "food = input('메뉴입력>>')\n",
+    "num = int(input('개수입력>>'))\n",
+    "price = num*4\n",
+    "b = '{} {}개는 {}달라'\n",
+    "buger = b.format(food,num,price)\n",
+    "print(buger)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### [문제2] "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 65,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 개수와 가격>>10 5\n"
+     ]
+    }
+   ],
+   "source": [
+    "menu = list(map(int,input('햄버거 개수와 가격>>').split()))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "list"
+      ]
+     },
+     "execution_count": 52,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(menu)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "햄버거 10개는 50달라\n"
+     ]
+    }
+   ],
+   "source": [
+    "price = menu[0] * menu[1]\n",
+    "b = '햄버거 {}개는 {}달라'\n",
+    "buger = b.format(menu[0],price)\n",
+    "print(buger)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 70,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'인천여상 3학년 3.33 김고은'"
+      ]
+     },
+     "execution_count": 70,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "stu = '%s %d학년 %.2f %s'\n",
+    "pr = stu%('인천여상',3,3.3333333,'김고은')\n",
+    "pr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 81,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "juso = '       인천시 연수구 동춘동     '"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(str, 23)"
+      ]
+     },
+     "execution_count": 72,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(juso), len(juso)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "add = juso.strip()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'인천시 연수구 동춘동'"
+      ]
+     },
+     "execution_count": 83,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['인천시', '연수구', '동춘동']"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.split()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 91,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.startswith('인천')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 92,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 92,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "add.endswith('동춘동')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 105,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "숫자는 짝수이다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "num =10\n",
+    "if num%2 == 0 :\n",
+    "    print('숫자는 짝수이다.')\n",
+    "else :\n",
+    "    print('숫자는 홀수이다')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### [문제] 입력을 받아서 짝수인지 홀수인지 알려줌"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 114,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "숫자입력>>5\n"
+     ]
+    }
+   ],
+   "source": [
+    "num= int(input('숫자입력>>'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 115,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "int"
+      ]
+     },
+     "execution_count": 115,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 118,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "5 는 홀수이다.\n"
+     ]
+    }
+   ],
+   "source": [
+    "if num%2 == 0 :\n",
+    "        print(num,'는 짝수이다.')\n",
+    "else :\n",
+    "        print(num,'는 홀수이다.')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 123,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "21\n",
+      "23\n",
+      "25\n",
+      "27\n",
+      "29\n",
+      "합계: 125\n"
+     ]
+    }
+   ],
+   "source": [
+    "sum =0\n",
+    "for i in range(20,31):\n",
+    "    if i%2 != 0:\n",
+    "        sum += i\n",
+    "        print(i)\n",
+    "print('합계:',sum)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### [문제 만들기]\n",
+    "-for, if\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "임의의 수를 입력하고 그 임의의 숫자까지의 구구단중 홀수 구구단, 혹은 약수 구구단만 출력해라(가로 세로 출력은 자유)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 131,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "입력>>>30\n"
+     ]
+    }
+   ],
+   "source": [
+    "num1 = int(input('입력>>>'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 133,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2 * 1 = 2\n",
+      "2 * 2 = 4\n",
+      "2 * 3 = 6\n",
+      "2 * 4 = 8\n",
+      "2 * 5 = 10\n",
+      "2 * 6 = 12\n",
+      "2 * 7 = 14\n",
+      "2 * 8 = 16\n",
+      "2 * 9 = 18\n",
+      "\n",
+      "\n",
+      "4 * 1 = 4\n",
+      "4 * 2 = 8\n",
+      "4 * 3 = 12\n",
+      "4 * 4 = 16\n",
+      "4 * 5 = 20\n",
+      "4 * 6 = 24\n",
+      "4 * 7 = 28\n",
+      "4 * 8 = 32\n",
+      "4 * 9 = 36\n",
+      "\n",
+      "\n",
+      "6 * 1 = 6\n",
+      "6 * 2 = 12\n",
+      "6 * 3 = 18\n",
+      "6 * 4 = 24\n",
+      "6 * 5 = 30\n",
+      "6 * 6 = 36\n",
+      "6 * 7 = 42\n",
+      "6 * 8 = 48\n",
+      "6 * 9 = 54\n",
+      "\n",
+      "\n",
+      "8 * 1 = 8\n",
+      "8 * 2 = 16\n",
+      "8 * 3 = 24\n",
+      "8 * 4 = 32\n",
+      "8 * 5 = 40\n",
+      "8 * 6 = 48\n",
+      "8 * 7 = 56\n",
+      "8 * 8 = 64\n",
+      "8 * 9 = 72\n",
+      "\n",
+      "\n",
+      "10 * 1 = 10\n",
+      "10 * 2 = 20\n",
+      "10 * 3 = 30\n",
+      "10 * 4 = 40\n",
+      "10 * 5 = 50\n",
+      "10 * 6 = 60\n",
+      "10 * 7 = 70\n",
+      "10 * 8 = 80\n",
+      "10 * 9 = 90\n",
+      "\n",
+      "\n",
+      "12 * 1 = 12\n",
+      "12 * 2 = 24\n",
+      "12 * 3 = 36\n",
+      "12 * 4 = 48\n",
+      "12 * 5 = 60\n",
+      "12 * 6 = 72\n",
+      "12 * 7 = 84\n",
+      "12 * 8 = 96\n",
+      "12 * 9 = 108\n",
+      "\n",
+      "\n",
+      "14 * 1 = 14\n",
+      "14 * 2 = 28\n",
+      "14 * 3 = 42\n",
+      "14 * 4 = 56\n",
+      "14 * 5 = 70\n",
+      "14 * 6 = 84\n",
+      "14 * 7 = 98\n",
+      "14 * 8 = 112\n",
+      "14 * 9 = 126\n",
+      "\n",
+      "\n",
+      "16 * 1 = 16\n",
+      "16 * 2 = 32\n",
+      "16 * 3 = 48\n",
+      "16 * 4 = 64\n",
+      "16 * 5 = 80\n",
+      "16 * 6 = 96\n",
+      "16 * 7 = 112\n",
+      "16 * 8 = 128\n",
+      "16 * 9 = 144\n",
+      "\n",
+      "\n",
+      "18 * 1 = 18\n",
+      "18 * 2 = 36\n",
+      "18 * 3 = 54\n",
+      "18 * 4 = 72\n",
+      "18 * 5 = 90\n",
+      "18 * 6 = 108\n",
+      "18 * 7 = 126\n",
+      "18 * 8 = 144\n",
+      "18 * 9 = 162\n",
+      "\n",
+      "\n",
+      "20 * 1 = 20\n",
+      "20 * 2 = 40\n",
+      "20 * 3 = 60\n",
+      "20 * 4 = 80\n",
+      "20 * 5 = 100\n",
+      "20 * 6 = 120\n",
+      "20 * 7 = 140\n",
+      "20 * 8 = 160\n",
+      "20 * 9 = 180\n",
+      "\n",
+      "\n",
+      "22 * 1 = 22\n",
+      "22 * 2 = 44\n",
+      "22 * 3 = 66\n",
+      "22 * 4 = 88\n",
+      "22 * 5 = 110\n",
+      "22 * 6 = 132\n",
+      "22 * 7 = 154\n",
+      "22 * 8 = 176\n",
+      "22 * 9 = 198\n",
+      "\n",
+      "\n",
+      "24 * 1 = 24\n",
+      "24 * 2 = 48\n",
+      "24 * 3 = 72\n",
+      "24 * 4 = 96\n",
+      "24 * 5 = 120\n",
+      "24 * 6 = 144\n",
+      "24 * 7 = 168\n",
+      "24 * 8 = 192\n",
+      "24 * 9 = 216\n",
+      "\n",
+      "\n",
+      "26 * 1 = 26\n",
+      "26 * 2 = 52\n",
+      "26 * 3 = 78\n",
+      "26 * 4 = 104\n",
+      "26 * 5 = 130\n",
+      "26 * 6 = 156\n",
+      "26 * 7 = 182\n",
+      "26 * 8 = 208\n",
+      "26 * 9 = 234\n",
+      "\n",
+      "\n",
+      "28 * 1 = 28\n",
+      "28 * 2 = 56\n",
+      "28 * 3 = 84\n",
+      "28 * 4 = 112\n",
+      "28 * 5 = 140\n",
+      "28 * 6 = 168\n",
+      "28 * 7 = 196\n",
+      "28 * 8 = 224\n",
+      "28 * 9 = 252\n",
+      "\n",
+      "\n",
+      "30 * 1 = 30\n",
+      "30 * 2 = 60\n",
+      "30 * 3 = 90\n",
+      "30 * 4 = 120\n",
+      "30 * 5 = 150\n",
+      "30 * 6 = 180\n",
+      "30 * 7 = 210\n",
+      "30 * 8 = 240\n",
+      "30 * 9 = 270\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range(2,num1+1):\n",
+    "    for j in range(1,10):\n",
+    "        if i%2 == 0 :\n",
+    "            print(i,'*',j,'=',i*j)\n",
+    "    print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
